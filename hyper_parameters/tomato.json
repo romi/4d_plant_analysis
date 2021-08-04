@@ -1,0 +1,236 @@
+{
+  "root_path": "../data/{}/{}/",
+  "pc_path": "../data/{}/processed/{}_segmented.ply",
+  "skel_path": "../data/{}/{}/skeleton_{}_connected.txt",
+  "skel_noted_path": "../data/{}/{}/skeleton_{}_noted.csv",
+  "segment_connect_path": "../data/{}/{}/branch_connection_{}.csv",
+  "stem_node_path": "../data/{}/{}/stem_nodes_ordered.csv",
+  "p2p_save_path_segment": "../data/{}/registration_result/{}_to_{}/",
+
+  "mesh_radius_factor": 2,
+  "pcd_clean_option": {
+    "downsample_rate": 80,
+    "voxel_size": 0.8,
+    "crop": false,
+    "cluster_distance_threshold": 5,
+    "crop_low_bound": 0.0,
+    "crop_up_bound": 1
+  },
+
+  "skeleton_extract_option": {
+    "03-05_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 3,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "03-06_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 3,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "03-07_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 3,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "03-08_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 2,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+
+    "03-09_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 3,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+
+    "03-10_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 3,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "03-11_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [22, 19],
+            "l1_iter_lim": 4,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "05-06_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 4,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "05-07_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 4,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "05-08_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 4,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "05-09_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 4,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+
+    "05-11_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [25, 19],
+            "l1_iter_lim": 5,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+
+    "05-12_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 5,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "05-13_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 5,
+            "l1_sample_size": 1.0
+        },
+      "connect": {
+        "distance_threshold": 7
+      },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    }
+  }
+}

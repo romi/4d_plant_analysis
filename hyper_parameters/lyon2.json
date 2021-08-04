@@ -1,0 +1,347 @@
+{
+  "root_path":  "../data/{}/{}/",
+  "pc_path": "../data/{}/processed/{}_segmented.ply",
+  "skel_path": "../data/{}/{}/skeleton_{}_connected.txt",
+  "skel_noted_path": "../data/{}/{}/skeleton_{}_noted.csv",
+  "segment_connect_path": "../data/{}/{}/branch_connection_{}.csv",
+  "stem_node_path": "../data/{}/{}/stem_nodes_ordered.csv",
+  "p2p_save_path_segment": "../data/{}/registration_result/{}_to_{}/",
+  "mesh_radius_factor": 2.0,
+
+  "pcd_clean_option" : {
+    "downsample_rate": 80,
+    "voxel_size": 0.7,
+    "crop": false,
+    "cluster_distance_threshold": 5,
+    "crop_low_bound": 0.0,
+    "crop_up_bound": 1},
+
+  "organ_segment_option": {
+    "03-20_AM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 0.7,
+        "merge_height_limit": 0.7
+    },
+    "03-20_PM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 5,
+        "merge_dh_threshold": 7
+    },
+    "03-21_AM": {
+        "skel_point_threshold": 3,
+      "root_height_threshold": 10
+    },
+    "03-21_PM": {
+      "skel_point_threshold": 10,
+      "root_height_threshold": 10
+    },
+    "03-22_AM": {
+      "skel_point_threshold": 10,
+      "root_height_threshold": 10
+    },
+    "03-22_PM": {
+      "skel_point_threshold": 10,
+      "root_height_threshold": 2
+    },
+    "03-23_AM": {
+        "skel_point_threshold": 10,
+      "root_height_threshold": 10
+    },
+    "03-23_PM": {
+        "skel_point_threshold": 10,
+        "merge_height_limit": 0.65,
+      "root_height_threshold": 2
+    },
+    "05-16_PM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 0.0,
+        "merge_height_limit": 0.4
+    },
+
+    "05-17_AM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 0.0,
+        "merge_height_limit": 0.4
+    },
+    "05-17_PM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 0.0,
+        "merge_height_limit": 0.4
+    },
+    "05-18_AM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 0.0,
+        "merge_height_limit": 0.0
+    },
+    "05-18_PM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 0.0,
+        "merge_height_limit": 0.0
+    },
+    "05-19_AM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 0,
+        "merge_height_limit": 0.0
+    },
+    "05-19_PM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": 5,
+        "merge_height_limit": 0.2
+    },
+    "05-20_PM": {
+        "skel_point_threshold": 3,
+        "root_height_threshold": -1,
+        "merge_height_limit": 0.7
+    }
+  },
+
+  "skeleton_extract_option": {
+    "03-23_PM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1,
+            "l1_sample_size": 1.0
+        },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+    "03-22_PM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1,
+            "l1_sample_size": 1.0
+        },
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 20
+        }
+    },
+
+    "03-23_AM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1,
+            "l1_sample_size": 1.0
+        },
+        "skel_segmentation": {
+            "direction_threshold": 0.7,
+            "diversion_threshold": 17
+        }
+    },
+
+    "03-22_AM": {
+        "skel_segmentation": {
+            "direction_threshold": 0.75,
+            "diversion_threshold": 15
+        }
+    },
+
+    "03-21_PM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1,
+            "l1_sample_size": 1.0
+        }
+    },
+
+    "03-21_AM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1,
+            "l1_sample_size": 0.7
+        }
+    },
+
+    "03-20_PM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 3
+        }
+    },
+
+    "03-20_AM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 2
+        }
+    },
+
+    "03-19_PM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 25],
+            "l1_sample_size": 0.7,
+            "l1_iter_lim": 4
+        },
+        "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        },
+        "skel_segmentation": {
+            "branch_number_lim": 0,
+            "height_threshold": 7
+        }
+    },
+
+    "03-19_AM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 25],
+            "l1_sample_size": 0.7,
+            "l1_iter_lim": 4
+        },
+        "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        },
+        "skel_segmentation": {
+            "branch_number_lim": 0,
+            "height_threshold": 0
+        }
+    },
+
+    "03-18_AM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 25],
+            "l1_sample_size": 0.7,
+            "l1_iter_lim": 4
+        },
+        "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        },
+        "skel_segmentation": {
+            "branch_number_lim": 0,
+            "height_threshold": 5
+        }
+    },
+
+    "03-18_PM": {
+        "contract": {
+            "laplacian_iter_lim": 2,
+            "contract_iter_lim": [20, 25],
+            "l1_sample_size": 0.7,
+            "l1_iter_lim": 5
+        },
+        "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        },
+        "skel_segmentation": {
+            "branch_number_lim": 0,
+            "height_threshold": 5
+        }
+    },
+    "05-17_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        }
+    },
+    "05-17_PM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        }
+    },
+
+    "05-18_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        }
+    },
+    "05-18_PM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [20, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        }
+    },
+    "05-19_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [16, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        }
+    },
+    "05-19_PM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [22, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        }
+    },
+    "05-20_AM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [16, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 1
+        }
+    },
+    "05-20_PM": {
+        "contract": {
+            "laplacian_iter_lim": 1,
+            "contract_iter_lim": [16, 19],
+            "l1_iter_lim": 1
+        },
+      "connect": {
+            "sigma_threshold": 0.9,
+            "distance_threshold": 15,
+            "cluster_number_lim": 2
+        }
+    }
+  }
+}
