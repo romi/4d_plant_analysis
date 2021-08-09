@@ -29,13 +29,14 @@ Install these python packages by `pip install -r requirements.txt`
 
 ### Registration
 
-- Unzip the data compressed in to `data/` fold.  
+- Unzip the data compressed in to `data/` fold.
 - Run the registration pipeline with: `python3 run_registration_pipeline --type XXX --method YYY`
   
     Replace `XXX` by the target type of plant in `arabidopsis`, `tomato`, `maize`. If it's not explicitly specified, it's set by default to `tomato`.
     
     Replace `YYY` by the method. We provide two choices of method: `local_icp` and `fm`, with `local_icp` our method and `fm` the functional map method as the reference method. If it's not explicitly specified, it's set by default to `local_icp`
   
+- Attention: every time rerun the registration process, please delete the existed `data/{type}/registration_result` directory
 - The expected visualization results:
     
 registration result of tomato:
@@ -57,3 +58,10 @@ registration result of maize:
 - The expected result:
 
 <img src="/imgs/interpolation_tomato.gif" width="400" height="300" />
+
+compared with the interpolation video produced by funtional map based method: 
+
+
+<img src="/imgs/interpolation_tomato_fm.gif" width="500" height="350" />
+
+We can see that the interpolation produced by our method is more smooth and less noisy. 

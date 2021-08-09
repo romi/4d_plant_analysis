@@ -156,14 +156,14 @@ if __name__ == "__main__":
     # day2 = "03-23_PM"
     # dataset = "lyon2"
 
-    day1 = "03-19_AM"
-    day2 = "03-20_AM"
-    dataset = "maize_1"
+    day1 = "03-05_AM"
+    day2 = "03-06_AM"
+    dataset = "tomato"
 
     X = []
     i = 1
 
-    for alpha in [0.5 * j for j in range(1, 3)]:
+    for alpha in [0.1 * j for j in range(1, 11)]:
         pcd_inter = interpolation_plant_level(day1, day2, dataset, alpha)
         open3d.visualization.draw_geometries([pcd_inter])
         i += 1

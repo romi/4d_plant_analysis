@@ -74,7 +74,8 @@ def get_p2p_mapping_organ_collection(organ_collection_1,
     no_matched_pcd_collection_1 = []  # store the segments without matching
     no_matched_pcd_collection_2 = []
 
-    p2p_mappings = [] # store the p2p mappings for each pair of segments
+    T21s =[] # store the p2p mappings for each pair of segments
+    T12s = []
     scores = []
     score_weights = []
     visited = []
@@ -135,8 +136,8 @@ def get_p2p_mapping_organ_collection(organ_collection_1,
             score_weights.append(np.asarray(mesh1.vertices).shape[0])
             mesh_collection_1.append(mesh1)
             mesh_collection_2.append(mesh2)
-            p2p_mappings.append(copy.deepcopy(T21))
-
+            T21s.append(copy.deepcopy(T21))
+            T12s.append(copy.deepcopy(T12))
         if len(pcd1) > len(skel_lm1):
             for i in range(len(skel_lm1), len(pcd1)):
                 pcd1[i] = pcd1[i].voxel_down_sample(0.8)
@@ -145,6 +146,7 @@ def get_p2p_mapping_organ_collection(organ_collection_1,
             for i in range(len(skel_lm2), len(pcd2)):
                 pcd2[i] = pcd2[i].voxel_down_sample(0.8)
                 no_matched_pcd_collection_2.append(pcd2[i])
+
     for i in range(len(organ_collection_2)):
         if i not in organ_matching and i > 2:
             organ_collection_2[i]['pcd'] = organ_collection_2[i]['pcd'].voxel_down_sample(0.8)
@@ -158,7 +160,8 @@ def get_p2p_mapping_organ_collection(organ_collection_1,
     for m1, m2 in zip(mesh_collection_1, mesh_collection_2):
         np.savetxt(save_path_format.format(dataset, day1, day2) + "{}_{}.csv".format(day1, i), np.asarray(m1.vertices))
         np.savetxt(save_path_format.format(dataset, day1, day2) + "{}_{}.csv".format(day2, i), np.asarray(m2.vertices))
-        np.savetxt(save_path_format.format(dataset, day1, day2) + "T21_{}.csv".format(i), p2p_mappings[i])
+        np.savetxt(save_path_format.format(dataset, day1, day2) + "T21_{}.csv".format(i), T21s[i])
+        np.savetxt(save_path_format.format(dataset, day1, day2) + "T12_{}.csv".format(i), T12s[i])
         i += 1
 
     i = 0
