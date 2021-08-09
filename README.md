@@ -30,7 +30,7 @@ Install these python packages by `pip install -r requirements.txt`
 ### Registration
 
 - Unzip the data compressed in to `data/` fold.
-- Run the registration pipeline with: `python3 run_registration_pipeline --type XXX --method YYY`
+- Run the registration pipeline with: `python3 run_registration_pipeline.py --type XXX --method YYY`
   
     Replace `XXX` by the target type of plant in `arabidopsis`, `tomato`, `maize`. If it's not explicitly specified, it's set by default to `tomato`.
     
@@ -53,7 +53,7 @@ registration result of maize:
 ### Interpolation
 
 - First run the registration framework to get the point-wise correspondence. Check `data/XXX/registration_result` to see if the registration work is done
-- Run the interpolation pipeline with: `python3 run_interpolation --type XXX` with `XXX` the type of plant
+- Run the interpolation pipeline with: `python3 run_interpolation.py --type XXX` with `XXX` the type of plant
 - The interpolated point clouds will be shown frame by frame. You can save the images and generate a video with them. 
 - The expected result:
 
