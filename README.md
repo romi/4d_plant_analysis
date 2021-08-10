@@ -29,6 +29,7 @@ Install these python packages by `pip install -r requirements.txt`
 
 ### Registration
 
+- Download the data from [https://media.romi-project.eu/data/4d_plant_analysis_data.zip]
 - Unzip the data compressed in to `data/` fold.
 - Run the registration pipeline with: `python3 run_registration_pipeline.py --type XXX --method YYY`
   
